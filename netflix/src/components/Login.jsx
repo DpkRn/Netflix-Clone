@@ -43,8 +43,8 @@ const Login = () => {
       } catch (err) {
         console.log(err);
         dispatch(setIsLoading(false));
-        if (err.response.data.message) toast.error(err.response.data.message);
-        else toast.error("something went error !");
+        const msg=err.response?.data?.message||"something went error !"
+        toast.error(msg);
       }
     } else {
       try {

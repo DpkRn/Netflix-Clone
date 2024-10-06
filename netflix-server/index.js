@@ -6,9 +6,7 @@ import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 
-dotenv.config({
-  path: ".env",
-});
+dotenv.config();
 const app = express();
 
 //middlewares
