@@ -1,4 +1,4 @@
-export const API_END_POINT='http://localhost:8080/api/v1/user';
+export const API_END_POINT='https://netflix-server-pink.vercel.app/api/v1/user';
 export const Now_Playing_Movie_Url = 'https://api.themoviedb.org/3/movie/now_playing';
 export const Popular_Movie_Url = 'https://api.themoviedb.org/3/movie/popular';
 export const Up_Comming_Movie_Url = 'https://api.themoviedb.org/3/movie/upcoming';
