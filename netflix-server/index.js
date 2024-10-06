@@ -6,13 +6,14 @@ import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 
 dotenv.config();
+const database_URL=process.env.MONGO_URI;
 const app = express();
 
 //middlewares
 app.use(
   cors({
     origin: ['https://netflix2-xi.vercel.app'],
-    secure: true,
+    methods:['GET','POST','PUT','PATCH','DELETE'],
     credentials: true,
   })
 );
@@ -27,11 +28,12 @@ app.get("/", (req, res) => {
 app.use("/api/v1/user", userRoute);
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(database_URL)
   .then(() => {
     console.log("connection done !");
   })
   .catch((err) => {
+    console.log("error while connecting database")
     console.log(err);
   });
 
