@@ -1,7 +1,6 @@
-// const express=require('express')
+import mongoose from "mongoose"
 import express from "express";
 import dotenv from "dotenv";
-import dbConnection from "./utils/database.js";
 import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
