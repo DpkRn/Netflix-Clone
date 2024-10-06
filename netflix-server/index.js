@@ -11,7 +11,7 @@ const app = express();
 //middlewares
 app.use(
   cors({
-    origin: [process.env.ORIGIN],
+    origin: ['https://netflix-server-pink.vercel.app'],
     secure: true,
     credentials: true,
   })
