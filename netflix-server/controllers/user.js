@@ -8,6 +8,7 @@ const createToken = (email, id) => {
 
 export const Login = async (req, res) => {
   try {
+    console.log("trying to logiing")
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({
@@ -15,6 +16,7 @@ export const Login = async (req, res) => {
         success: false,
       });
     }
+    
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({
@@ -22,6 +24,7 @@ export const Login = async (req, res) => {
         success: false,
       });
     }
+    console.log("user found !")
 
     const auth =  bcryptjs.compare(password, user.password);
 
